@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>bigimg</title>
+</head>
+<body>
+    <div class="big_img">
+        <table align="center">
+            <tr>
+                <td class="font_size">
+                    <a href="cat_1.html" target="_blank"> 
+                        <img src="img/cat_1.jpg" alt="">
+                    </a>
+                    <figcaption class="fig">cat_1</figcaption>
+                </td>
+                <td class="font_size">
+                    <a href="cat_2.html" target="_blank"> 
+                        <img src="img/cat_2.jpg" alt="">
+                    </a>
+                    <figcaption class="fig">cat_2</figcaption>
+                </td>
+                <td class="font-size">
+                    <a href="cat_3.html" target="_blank"> 
+                        <img src="img/cat_3.jpg" alt="">
+                    </a>
+                    <figcaption class="fig">cat_3</figcaption>
+                </td>
+                <td class="font-size">
+                    <a href="cat_4.html" target="_blank"> 
+                        <img src="img/cat_5.jpg" alt="">
+                    </a>
+                    <figcaption class="fig">cat_4</figcaption>
+                </td>
+                <td class="font-size">
+                    <a href="cat_5.html" target="_blank"> 
+                        <img src="img/cat_6.jpg" alt="">
+                    </a>
+                    <figcaption class="fig">cat_5</figcaption>
+                </td> 
+            </tr>
+        </table>
+    </div>
+</body>
+<style>
+    body{
+        background: url("img/view_1.jpg");
+        background-size: 1440px 800px;
+        z-index: -999;
+    }
+    .font_size img{
+        width: 305px;
+        height: 440px;
+    }
+    .font-size img{
+        width: 345px;
+        height: 440px;
+    }
+    .big_img{
+        /* overflow: hidden; 多余部分隐藏 */
+        float: left;
+        position: relative;
+        top: 120px;
+        left: 0px;
+    } 
+    .big_img img{
+        transition: all .4s;
+    }
+    .big_img img:hover{
+        transform: scale(1.3);
+        cursor: pointer;
+    }
+    .fig{
+        font-family: 'Times New Roman', Times, serif;
+        color: antiquewhite;
+        font-weight: 200;
+        font-size: 30px;
+        text-align: center;
+    }
+</style>
+<script>
+    $(document).keydown(function(event){
+        var keyNum = event.which;//获取键值
+        var Item = $('#body')//要移动的元素
+        Item.css({position:'relative'});//设置position
+        switch (keyNum){//判断按键
+            case 1:
+                Item.animate({left:'-=40px'})
+                break;
+            case 2:
+                Item.animate({top:'-=40px'})
+                break;
+            case 3:
+                Item.animate({left:'+=40px'})
+                break;
+            case 4:
+                Item.animate({top:'+=40px'})
+                break;
+            default:
+                break;
+        }
+    });
+</script>
+</html>
